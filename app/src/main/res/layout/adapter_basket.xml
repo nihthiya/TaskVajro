@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <import type="android.view.View" />
+        <variable
+            name="cart"
+            type="com.easytutor.app.shopping.data.db.entity.Cart" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="4dp"
+        app:cardCornerRadius="4dp">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.cardview.widget.CardView
+                android:layout_margin="3dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="195dp">
+
+                        <ImageView
+                            app:image="@{cart.image}"
+                            android:id="@+id/imageView"
+                            android:layout_width="match_parent"
+                            android:scaleType="matrix"
+                            android:layout_height="195dp"
+                            />
+
+
+                        <TextView
+                            android:id="@+id/textViewRating"
+                            android:text="UA"
+                            android:layout_marginLeft="12dp"
+                            android:layout_marginBottom="15dp"
+                            android:padding="4dp"
+                            android:layout_alignParentBottom="true"
+                            android:layout_alignParentLeft="true"
+                            android:textAlignment="center"
+                            android:gravity="center"
+                            android:textSize="10sp"
+                            android:textColor="@android:color/white"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"/>
+
+                        <RelativeLayout
+                            android:id="@+id/layout_like"
+                            android:paddingTop="3dp"
+                            android:paddingBottom="3dp"
+                            android:paddingLeft="12dp"
+                            android:paddingRight="12dp"
+                            android:layout_margin="15dp"
+                            android:layout_alignParentBottom="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:layout_marginRight="6dp"
+                                android:layout_marginTop="3dp"
+                                android:id="@+id/imageViewLike"
+                                android:layout_width="15dp"
+                                android:layout_height="14dp"/>
+
+
+                        </RelativeLayout>
+
+                    </RelativeLayout>
+
+
+                    <RelativeLayout
+                        android:padding="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/textViewTitle"
+                            android:textSize="17sp"
+                            android:textColor="@color/black"
+                            android:maxLines="2"
+                            android:layout_marginRight="10dp"
+                            android:text="@{cart.title}"
+                            android:layout_alignParentLeft="true"
+                            android:layout_toLeftOf="@+id/textViewPrice"
+                            tools:text="Captain Marvel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:id="@+id/textViewPrice"
+                            android:textSize="17sp"
+                            android:layout_alignParentRight="true"
+                            android:gravity="center"
+                            android:text="@{cart.price}"
+                            tools:text="jkh"
+                            android:layout_width="80dp"
+                            android:layout_height="wrap_content"/>
+
+                    </RelativeLayout>
+
+
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+</layout>
