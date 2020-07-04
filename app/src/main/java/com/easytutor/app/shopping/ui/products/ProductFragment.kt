@@ -103,7 +103,7 @@ class ProductFragment : BaseFragment(), RecyclerViewClickListner
                             productx.name,
                             productx.price,
                             count.toString(),
-                            productx.price
+                            productx.image
                         )
                         context?.let {
                             AppDatabase(it).getCartDao().updateQuantity(cart)
@@ -125,7 +125,7 @@ class ProductFragment : BaseFragment(), RecyclerViewClickListner
                     var count = recyclerviewProductBinding.textQuantity.text.toString().toInt()
                     count++
                     recyclerviewProductBinding.textQuantity.text = count.toString()
-                    var cart = Cart(productx.id,productx.name,productx.price,count.toString(),productx.price)
+                    var cart = Cart(productx.id,productx.name,productx.price,count.toString(),productx.image)
                     context?.let {
                         AppDatabase(it).getCartDao().updateQuantity(cart)
                 }
