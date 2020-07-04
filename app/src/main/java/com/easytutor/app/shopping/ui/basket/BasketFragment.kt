@@ -8,12 +8,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 
 import com.easytutor.app.shopping.R
 import com.easytutor.app.shopping.data.db.AppDatabase
-import com.easytutor.app.shopping.data.network.ProductApi
-import com.easytutor.app.shopping.data.repositories.ProductRepository
-import kotlinx.android.synthetic.main.product_fragment.*
+import com.easytutor.app.shopping.data.repositories.BasketRepository
+import kotlinx.android.synthetic.main.basket_fragment.*
 
 class BasketFragment : Fragment() {
 
@@ -29,19 +29,17 @@ class BasketFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        val api = ProductApi()
         val db = context?.let { AppDatabase(it) }
-        val repository = db?.let { ProductRepository(api, it) }
-
+        val repository = db?.let { BasketRepository(it) }
         factory = repository?.let { BasketViewModelFactory(it) }!!
         viewModel = ViewModelProviders.of(this,factory).get(BasketViewModel::class.java)
         viewModel.getBasketData()
 
-        recycler_view_products.isNestedScrollingEnabled = false
+        recycler_view_basket.isNestedScrollingEnabled = false
 
         viewModel.basketData.observe(viewLifecycleOwner, Observer { basketData ->
-            recycler_view_products.also {
-                it.layoutManager = GridLayoutManager(requireContext(),2)
+            recycler_view_basket.also {
+                it.layoutManager = LinearLayoutManager(requireContext())
                 it.setHasFixedSize(true)
                 it.adapter = db?.let { it1 -> BasketAdapter(basketData, it1) }
             }

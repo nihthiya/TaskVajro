@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mynavgraph"
+    app:startDestination="@id/productFragment2">
+
+    <fragment
+        android:id="@+id/productFragment2"
+        android:name="com.easytutor.app.shopping.ui.products.ProductFragment"
+        android:label="product_fragment"
+        tools:layout="@layout/product_fragment" >
+        <action
+            android:id="@+id/action_productFragment2_to_basketFragment"
+            app:destination="@id/basketFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/basketFragment"
+        android:name="com.easytutor.app.shopping.ui.basket.BasketFragment"
+        android:label="BasketFragment" />
+</navigation>

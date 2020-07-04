@@ -12,9 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name="com.easytutor.app.shopping.MainActivity"></activity>
-        <activity android:name="com.easytutor.app.shopping.BasketActivity" />
         <activity android:name="com.easytutor.app.shopping.ui.basket.BasketAdapter" />
-        <activity android:name="com.easytutor.app.shopping.BasketActivity" />
         <activity android:name="com.easytutor.app.shopping.SplashAcivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

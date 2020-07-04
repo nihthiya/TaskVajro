@@ -27,59 +27,22 @@
                 android:layout_height="wrap_content">
 
                 <LinearLayout
-                    android:orientation="vertical"
+                    android:orientation="horizontal"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
                     <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="195dp">
+                        android:layout_width="100dp"
+                        android:layout_height="100dp">
 
                         <ImageView
                             app:image="@{cart.image}"
                             android:id="@+id/imageView"
                             android:layout_width="match_parent"
-                            android:scaleType="matrix"
+                            android:scaleType="fitXY"
                             android:layout_height="195dp"
                             />
 
-
-                        <TextView
-                            android:id="@+id/textViewRating"
-                            android:text="UA"
-                            android:layout_marginLeft="12dp"
-                            android:layout_marginBottom="15dp"
-                            android:padding="4dp"
-                            android:layout_alignParentBottom="true"
-                            android:layout_alignParentLeft="true"
-                            android:textAlignment="center"
-                            android:gravity="center"
-                            android:textSize="10sp"
-                            android:textColor="@android:color/white"
-                            android:layout_width="25dp"
-                            android:layout_height="25dp"/>
-
-                        <RelativeLayout
-                            android:id="@+id/layout_like"
-                            android:paddingTop="3dp"
-                            android:paddingBottom="3dp"
-                            android:paddingLeft="12dp"
-                            android:paddingRight="12dp"
-                            android:layout_margin="15dp"
-                            android:layout_alignParentBottom="true"
-                            android:layout_alignParentRight="true"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content">
-
-                            <ImageView
-                                android:layout_marginRight="6dp"
-                                android:layout_marginTop="3dp"
-                                android:id="@+id/imageViewLike"
-                                android:layout_width="15dp"
-                                android:layout_height="14dp"/>
-
-
-                        </RelativeLayout>
 
                     </RelativeLayout>
 
@@ -97,7 +60,6 @@
                             android:layout_marginRight="10dp"
                             android:text="@{cart.title}"
                             android:layout_alignParentLeft="true"
-                            android:layout_toLeftOf="@+id/textViewPrice"
                             tools:text="Captain Marvel"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"/>
@@ -105,12 +67,40 @@
                         <TextView
                             android:id="@+id/textViewPrice"
                             android:textSize="17sp"
-                            android:layout_alignParentRight="true"
-                            android:gravity="center"
+                            android:layout_below="@+id/textViewTitle"
+                            android:gravity="left"
                             android:text="@{cart.price}"
                             tools:text="jkh"
                             android:layout_width="80dp"
                             android:layout_height="wrap_content"/>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/textViewPrice"
+                            android:orientation="horizontal">
+                            <TextView
+                                android:id="@+id/textView"
+                                android:textSize="17sp"
+                                android:gravity="left"
+                                android:layout_weight="2"
+                                android:text="Quantity : "
+                                android:textColor="@color/black"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"/>
+
+                            <TextView
+                                android:id="@+id/textViewQuantity"
+                                android:textSize="17sp"
+                                android:gravity="left"
+                                android:layout_weight="1"
+                                android:text="@{cart.quantity}"
+                                tools:text=""
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"/>
+
+                        </LinearLayout>
+
 
                     </RelativeLayout>
 

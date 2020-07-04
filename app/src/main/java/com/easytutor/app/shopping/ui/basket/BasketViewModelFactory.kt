@@ -2,13 +2,14 @@ package com.easytutor.app.shopping.ui.basket
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.easytutor.app.shopping.data.repositories.ProductRepository
+import com.easytutor.app.shopping.data.repositories.BasketRepository
+
 
 @Suppress("UNCHECKED_CAST")
-class BasketViewModelFactory(private val repository: ProductRepository) :
-    ViewModelProvider.NewInstanceFactory() {
+class BasketViewModelFactory (private val repository: BasketRepository)
+    : ViewModelProvider.NewInstanceFactory() {
 
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
-        return BasketViewModelFactory(repository) as T
+        return BasketViewModel(repository) as T
     }
 }
